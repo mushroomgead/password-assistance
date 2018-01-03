@@ -1,1 +1,1 @@
-Assistance for keep your infomation.
+Assistance for keep your information.
