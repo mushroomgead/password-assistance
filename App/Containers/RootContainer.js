@@ -3,6 +3,7 @@ import { View, StatusBar } from 'react-native'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
+import ToggleSideNavActions from '../Redux/ToggleSideNavRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 
 // Styles
@@ -26,9 +27,17 @@ class RootContainer extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    toggle: state.toggle.response,
+    navigationProp: state.navigationProp.response,
+  }
+}
+
 // wraps dispatch to create nicer functions to call within our component
 const mapDispatchToProps = (dispatch) => ({
-  startup: () => dispatch(StartupActions.startup())
+  startup: () => dispatch(StartupActions.startup()),
+  openSideNav: (toggleMode) => dispatch(ToggleSideNavActions.toggleSideNavRequest(toggleMode))
 })
 
-export default connect(null, mapDispatchToProps)(RootContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RootContainer)

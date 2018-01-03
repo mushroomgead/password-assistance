@@ -7,11 +7,15 @@ import DebugConfig from '../Config/DebugConfig'
 
 import { StartupTypes } from '../Redux/StartupRedux'
 import { GithubTypes } from '../Redux/GithubRedux'
+import { ToggleSideNavTypes } from '../Redux/ToggleSideNavRedux'
+import { SendNavigationTypes } from '../Redux/SendNavigationRedux'
 
 /* ------------- Sagas ------------- */
 
 import { startup } from './StartupSagas'
 import { getUserAvatar } from './GithubSagas'
+import { getToggleSideNav } from './ToggleSideNavSagas'
+import { getSendNavigation } from './SendNavigationSagas'
 
 /* ------------- API ------------- */
 
@@ -27,6 +31,9 @@ export default function * root () {
     takeLatest(StartupTypes.STARTUP, startup),
 
     // some sagas receive extra parameters in addition to an action
-    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api)
+    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
+
+    takeLatest(ToggleSideNavTypes.TOGGLE_SIDE_NAV_REQUEST, getToggleSideNav),
+    takeLatest(SendNavigationTypes.SEND_NAVIGATION_REQUEST, getSendNavigation),
   ])
 }

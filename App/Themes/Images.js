@@ -8,6 +8,7 @@ const images = {
   igniteClear: require('../Images/ignite-logo-transparent.png'),
   tileBg: require('../Images/tile_bg.png'),
   background: require('../Images/BG.png'),
+  mascot: require('../Images/mascot.png'),
   buttonBackground: require('../Images/button-bg.png'),
   api: require('../Images/Icons/icon-api-testing.png'),
   components: require('../Images/Icons/icon-components.png'),
