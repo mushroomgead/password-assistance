@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, Image, View, Keyboard } from 'react-native'
 import { Form, Item, Input, Label, Button } from 'native-base'
 import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 
