@@ -10,7 +10,19 @@ import styles from './Styles/SigininScreenStyles'
 
 export default class SigninScreen extends Component {
 
+  state = {
+    username: '',
+    password: ''
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // this.props.navigation.navigate('DataListScreen')
+  }
+
   onPressLogin = () => {
+    const { username, password } = this.state
+
+    this.props.authenticate(username, password)
     this.props.navigation.navigate('DataListScreen')
   }
 
@@ -31,11 +43,23 @@ export default class SigninScreen extends Component {
             <Form>
               <Item floatingLabel>
                 <Label>Username</Label>
-                <Input />
+                <Input
+                  onSubmitEditing={Keyboard.dismiss}
+                  returnKeyType='done'
+                  maxLength={60}
+                  onChangeText={(username) => this.setState({ username })}
+                  value={this.state.username}
+                />
               </Item>
               <Item floatingLabel last>
                 <Label>Password</Label>
-                <Input />
+                <Input
+                  onSubmitEditing={Keyboard.dismiss}
+                  returnKeyType='done'
+                  maxLength={60}
+                  onChangeText={(password) => this.setState({ password })}
+                  value={this.state.password}
+                />
               </Item>
               <View style={styles.containerBtn}>
                 <Button block style={styles.primaryButton} onPress={this.onPressLogin}>

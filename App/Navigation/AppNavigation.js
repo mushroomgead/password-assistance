@@ -16,7 +16,7 @@ const PrimaryNav = StackNavigator({
   DataItemScreen: { screen: DataItemScreen },
 }, {
   // Default config for all screens
-  headerMode: 'none',
+  headerMode: 'screen',
   initialRouteName: 'SigninScreen',
   navigationOptions: {
     headerStyle: styles.header
