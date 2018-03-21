@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
@@ -6,7 +6,7 @@ export default StyleSheet.create({
     height: Metrics.navBarHeight,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: Platform.OS === 'ios' ? 15 : 0,
+    paddingTop: Platform.OS === 'ios' ? 15 : 0
   },
   iconLeft: {
     flex: 1,
@@ -30,5 +30,5 @@ export default StyleSheet.create({
     fontSize: 12,
     padding: 12.5,
     backgroundColor: 'rgba(0,0,0,0)'
-  },
+  }
 })

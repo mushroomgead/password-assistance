@@ -30,7 +30,7 @@ class RootContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     toggle: state.toggle.response,
-    navigationProp: state.navigationProp.response,
+    navigationProp: state.navigationProp.response
   }
 }
 

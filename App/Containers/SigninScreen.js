@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View, Keyboard } from 'react-native'
 import { Form, Item, Input, Label, Button } from 'native-base'
-import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 
 import { Images } from '../Themes'
 
@@ -9,20 +8,19 @@ import { Images } from '../Themes'
 import styles from './Styles/SigininScreenStyles'
 
 export default class SigninScreen extends Component {
-
   state = {
     username: '',
     password: ''
   }
 
-  componentWillReceiveProps(nextProps) {
+  // componentWillReceiveProps(nextProps) {
     // this.props.navigation.navigate('DataListScreen')
-  }
+  // }
 
   onPressLogin = () => {
-    const { username, password } = this.state
+    // const { username, password } = this.state
 
-    this.props.authenticate(username, password)
+    // this.props.authenticate(username, password)
     this.props.navigation.navigate('DataListScreen')
   }
 

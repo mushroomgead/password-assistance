@@ -4,6 +4,7 @@ import SigninScreen from '../Containers/SigninScreen'
 import SignupScreen from '../Containers/SignupScreen'
 import DataListScreen from '../Containers/DataListScreen'
 import DataItemScreen from '../Containers/DataItemScreen'
+import DetailScreen from '../Containers/DetailScreen'
 
 import styles from './Styles/NavigationStyles'
 
@@ -14,6 +15,7 @@ const PrimaryNav = StackNavigator({
   SignupScreen: { screen: SignupScreen },
   DataListScreen: { screen: DataListScreen },
   DataItemScreen: { screen: DataItemScreen },
+  DetailScreen: { screen: DetailScreen }
 }, {
   // Default config for all screens
   headerMode: 'screen',

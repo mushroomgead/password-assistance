@@ -1,27 +1,25 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, View, Keyboard } from 'react-native'
 import { Form, Item, Input, Label, Button } from 'native-base'
-import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 import NavigatorBar from '../Components/NavigatorBar'
 
-import { Images } from '../Themes'
+// import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/SignupScreenStyles'
 
 export default class SignupScreen extends Component {
-
   state = {
     email: '',
     username: '',
     password: '',
-    confirmPassword: '',
+    confirmPassword: ''
   }
 
   renderNavigator = () => {
     return <NavigatorBar
-      title="สมัครสมาชิก"
-      menuRight={true}
+      title='สมัครสมาชิก'
+      menuRight
       iconRight={{
         type: 'IO',
         name: 'ios-menu-outline',
@@ -31,13 +29,13 @@ export default class SignupScreen extends Component {
   }
 
   onPressSignup = () => {
-    const { email, username, password, confirmPassword } = this.state
+    // const { email, username, password, confirmPassword } = this.state
 
-    this.props.onPressSignup({ data: email, username, password, confirmPassword })
+    // this.props.onPressSignup({ data: email, username, password, confirmPassword })
   }
 
   onPressCancel = () => {
-    this.props.onPressCancel()
+    // this.props.onPressCancel()
   }
 
   render () {

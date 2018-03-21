@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga/effects'
+import { put } from 'redux-saga/effects'
 import SendNavigationActions from '../Redux/SendNavigationRedux'
 
 export function * getSendNavigation (action) {

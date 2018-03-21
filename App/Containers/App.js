@@ -5,6 +5,18 @@ import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
 
+// Apollo graphql
+// import { ApolloProvider } from 'react-apollo'
+// import { ApolloClient } from 'apollo-client'
+// import { HttpLink } from 'apollo-link-http'
+// import { InMemoryCache } from 'apollo-cache-inmemory'
+
+//
+// const client = new ApolloClient({
+//   link: new HttpLink(),
+//   cache: new InMemoryCache()
+// })
+
 // create our store
 const store = createStore()
 
@@ -21,7 +33,9 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
+        {/* <ApolloProvider client={client}> */}
         <RootContainer />
+        {/* </ApolloProvider> */}
       </Provider>
     )
   }

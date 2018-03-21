@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import { Button } from 'native-base'
-import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 import NavigatorBar from '../Components/NavigatorBar'
-
-import { Images } from '../Themes'
+import DataItemScreen from './DataItemScreen'
 
 // Styles
 import styles from './Styles/DataListScreenStyles'
 
 export default class DataListScreen extends Component {
-
   renderNavigator = () => {
     return <NavigatorBar
-      menuRight={true}
+      menuRight
       iconRight={{
         type: 'IO',
         name: 'ios-menu-outline',
@@ -23,7 +20,14 @@ export default class DataListScreen extends Component {
   }
 
   onPressAddData = () => {
-    this.props.navigation.navigate('DataItemScreen')
+    this.props.navigation.navigate('DetailScreenStyles')
+  }
+
+  renderItem = () => {
+    return <FlatList
+      data={[{key: 'a'}, {key: 'b'}]}
+      renderItem={({item}) => <DataItemScreen />}
+    />
   }
 
   render () {
@@ -31,10 +35,11 @@ export default class DataListScreen extends Component {
       <View style={styles.container}>
         {this.renderNavigator()}
         {/* <ScrollView style={styles.container}> */}
-          <Text>DataListScreen</Text>
-          <Button block style={styles.primaryButton} onPress={this.onPressAddData}>
-            <Text style={styles.btnText}>Add</Text>
-          </Button>
+        <Text>DataListScreen</Text>
+        <Button block style={styles.primaryButton} onPress={this.onPressAddData}>
+          <Text style={styles.btnText}>Add</Text>
+        </Button>
+        {this.renderItem()}
         {/* </ScrollView> */}
       </View>
     )

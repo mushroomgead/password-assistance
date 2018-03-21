@@ -34,6 +34,6 @@ export default function * root () {
     takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
 
     takeLatest(ToggleSideNavTypes.TOGGLE_SIDE_NAV_REQUEST, getToggleSideNav),
-    takeLatest(SendNavigationTypes.SEND_NAVIGATION_REQUEST, getSendNavigation),
+    takeLatest(SendNavigationTypes.SEND_NAVIGATION_REQUEST, getSendNavigation)
   ])
 }
