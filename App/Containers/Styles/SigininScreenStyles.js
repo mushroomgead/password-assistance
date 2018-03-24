@@ -1,10 +1,12 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 import { Metrics, ApplicationStyles, Colors } from '../../Themes/'
+
+const height = Dimensions.get('window').height
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    backgroundColor: Colors.background,
+    // backgroundColor: Colors.background,
     paddingBottom: Metrics.baseMargin
   },
   logo: {
@@ -16,15 +18,26 @@ export default StyleSheet.create({
   centered: {
     alignItems: 'center'
   },
+  section: {
+    height: height,
+    justifyContent: 'center',
+  },
+  sectionBackground: {
+    height: height / 2.5 ,
+    backgroundColor: '#ffffff',
+    padding: 20,
+    borderRadius: 5
+  },
   containerBtn: {
     flexDirection: 'row',
-    flex: 2,
+    // flex: 2,
     justifyContent: 'space-between',
     paddingTop: 40
   },
   primaryButton: {
     flex: 1,
-    marginRight: 10
+    backgroundColor: '#001588'
+    // marginRight: 10
   },
   secondaryButton: {
     flex: 1
