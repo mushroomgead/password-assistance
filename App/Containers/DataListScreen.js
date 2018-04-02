@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, FlatList, TouchableOpacity } from 'react-native'
 import { Button } from 'native-base'
+import { connect } from 'react-redux'
 import NavigatorBar from '../Components/NavigatorBar'
 import DataItemScreen from '../Components/DataItemScreen'
 import LinearGradient from '../Components/LinearGradient'
@@ -13,6 +14,7 @@ const nameList = [
 ]
 
 export default class DataListScreen extends Component {
+
   renderNavigator = () => {
     return <NavigatorBar
       menuRight
@@ -56,3 +58,17 @@ export default class DataListScreen extends Component {
     )
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+const WrappedComponent = connect(mapStateToProps, mapDispatchToProps)(DataListScreen)

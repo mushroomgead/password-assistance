@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View, Keyboard, StyleSheet } from 'react-native'
 import { Form, Item, Input, Label, Button } from 'native-base'
+import { connect } from 'react-redux'
 import LinearGradient from '../Components/LinearGradient'
 
 import { Images } from '../Themes'
@@ -15,7 +16,9 @@ export default class SigninScreen extends Component {
   }
 
   // componentWillReceiveProps(nextProps) {
-    // this.props.navigation.navigate('DataListScreen')
+  //   if (nextProps.dataList !== this.props.dataList) {
+  //     this.props.navigation.navigate('DataListScreen')
+  //   }
   // }
 
   onPressLogin = () => {
@@ -90,3 +93,17 @@ export default class SigninScreen extends Component {
     )
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+const WrappedComponent = connect(mapStateToProps, mapDispatchToProps)(SigninScreen)
